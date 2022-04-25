@@ -5,6 +5,7 @@ import NavigationBar from './Components/NavigationBar/NavigationBar';
 import SearchBar from './Components/SearchBar/SearchBar';
 import UpdateMusic from './Components/UpdateMusic/UpdateMusic';
 
+
 function App() {
 
   const [songs, setSongs] = useState([]);
@@ -14,8 +15,8 @@ function App() {
   }, [])
 
   async function getAllSongs(){
-    let response = await axios.get('http://127.0.0.1:8000/api/music_library/');
-    setSongs(response.data);
+    await axios.get('http://127.0.0.1:8000/api/music_library/')
+    .then(response => setSongs(response.data));
   }
 
   return (
