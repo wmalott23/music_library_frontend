@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable'
 import NavigationBar from './Components/NavigationBar/NavigationBar';
 import SearchBar from './Components/SearchBar/SearchBar';
+import UpdateMusic from './Components/UpdateMusic/UpdateMusic';
 
 function App() {
 
-  const [songs, setSongs] = useState([{title, artist, album, release_date, genre, liked, num_likes, img_url}])
+  const [songs, setSongs] = useState([]);
 
+  useEffect(() => {
+    getAllSongs();
+  }, [])
+
+  async function getAllSongs(){
+    let response = await axios.get('http://127.0.0.1:8000/api/music_library/');
+    setSongs(response.data);
+  }
 
   return (
     <div>
@@ -14,10 +24,13 @@ function App() {
         <NavigationBar />
       </div>
       <div>
+        <SearchBar />
+      </div>
+      <div>
         <MusicTable parentSongs={songs}/>
       </div>
       <div>
-        <SearchBar />
+        <UpdateMusic getAllSongsProperty={useEffect} />
       </div>
     </div>
   );

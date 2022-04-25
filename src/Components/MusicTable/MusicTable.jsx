@@ -7,14 +7,14 @@ const MusicTable = (props) => {
         props.parentSongs.map((song) => {
             return(
                 <div>
-                    <Song   title={props.title}
-                            artist={props.artist}
-                            album={props.album}
-                            release_date={props.release_date}
-                            genre={props.genre}
-                            like={props.like}
-                            image_url={props.img_url}
-                            num_likes={props.num_likes}/>
+                    <Song   title={song.title}
+                            artist={song.artist}
+                            album={song.album}
+                            release_date={song.release_date}
+                            genre={song.genre}
+                            like={song.like}
+                            image_url={song.img_url}
+                            num_likes={song.num_likes}/>
                 </div>
             )
         })
