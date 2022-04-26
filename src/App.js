@@ -5,6 +5,8 @@ import NavigationBar from './Components/NavigationBar/NavigationBar';
 import SearchBar from './Components/SearchBar/SearchBar';
 import UpdateMusic from './Components/UpdateMusic/UpdateMusic';
 import CreateSong from './Components/CreateSong/CreateSong';
+import PutSong from './Components/PutSong/PutSong';
+import DeleteSong from './Components/DeleteSong/DeleteSong';
 
 const baseURL = "http://127.0.0.1:8000/api/music_library/";
 
@@ -28,14 +30,18 @@ function App() {
   }
 
   async function putSong(newSong){
-    let response = await axios.put(`${baseURL}${newSong.id}/`,{
-      
-    });
+    let response = await axios.put(`${baseURL}${newSong.id}/`, newSong);
     if(response.status === 201){
       await getAllSongs();
     }
   }
 
+  async function deleteSong(newSong){
+    let response = await axios.delete(`${baseURL}${newSong.id}/`, null);
+    if(response.status === 204){
+      await getAllSongs();
+    }
+  }
 
   return (
     <div className="all-items bg-success d-flex flex-column align-items-center">
@@ -53,6 +59,12 @@ function App() {
       </div>
       <div>
         <CreateSong createNewSong={createSong}/>
+      </div>
+      <div>
+        <PutSong putNewSong={putSong}/>
+      </div>
+      <div>
+        <DeleteSong deleteNewSong={deleteSong}/>
       </div>
     </div>
   );

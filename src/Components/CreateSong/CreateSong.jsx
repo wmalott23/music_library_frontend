@@ -22,14 +22,15 @@ const CreateSong = (props) => {
             release_date: releaseDate,
             genre: genre,
             liked: "False",
-            img_url: null
+            img_url: null,
+            num_likes: 0
         };
 
         props.createNewSong(newSong);
     }
 
     return ( 
-        <form className="bg-primary" onSubmit={handleSubmit}>
+        <form className="bg-primary" onSubmit={handleSubmit}>CreateSong
             <div>
                 <label>Title: </label>
                 <textarea type='text' onChange={(event) => setTitle(event.target.value)}/>
