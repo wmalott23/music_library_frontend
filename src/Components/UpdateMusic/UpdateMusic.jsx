@@ -10,7 +10,6 @@ const UpdateMusic = (props) => {
 
     return ( 
         <div onSubmit={handleSubmit}>
-            <button>Update Songs</button>
         </div>
      );
 }

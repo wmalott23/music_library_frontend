@@ -6,33 +6,31 @@ const Song = ({title, artist, album, release_date, genre, liked, image_url, num_
 
 
     return ( 
-        <div className="song-box border d-flex">
-            <div className="like-image d-flex flex-column col-md-3 p-1 align-items-start">
-                <div className="image p-1">
-                    <img className="image" src={image_url} alt="image unavailable"/>
+        <div className="d-flex flex-row">
+            <div className="">
+                <div className="">
+                    <img className=""/>
                 </div>
-                <div className="likes p-1">
-                    <h6>{num_likes}</h6>
+                <div className="">
+                    <h6>{num_likes}1</h6>
                     <button>{liked}</button>
                 </div>
             </div>
-            <div className="info d-flex align-items-start flex-column">
-                <div className="mb-2">
+                <div className="">
                     <h5>{title}</h5>
                 </div>
                 <div>
-                    <h7>{artist}</h7>
+                    <h6>{artist}</h6>
                 </div>
                 <div>
-                    <h7>{album}</h7>
+                    <h6>{album}</h6>
                 </div>
                 <div>
-                    <h7>{release_date}</h7>
+                    <h6>{release_date}</h6>
                 </div>
                 <div>
-                    <h7>{genre}</h7>
+                    <h6>{genre}</h6>
                 </div>
-            </div>
         </div>
      );
 }
