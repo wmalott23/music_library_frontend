@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Song.css'
 
-const Song = ({title, artist, album, release_date, genre, liked, image_url, num_likes}) => {
+const Song = ({id, title, artist, album, release_date, genre, liked, image_url, num_likes}) => {
 
 
 
@@ -16,7 +16,10 @@ const Song = ({title, artist, album, release_date, genre, liked, image_url, num_
                     <button>{liked}</button>
                 </div>
             </div>
-                <div className="">
+                <div>
+                    <h5>{id}</h5>
+                </div>
+                <div>
                     <h5>{title}</h5>
                 </div>
                 <div>

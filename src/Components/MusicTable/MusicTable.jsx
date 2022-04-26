@@ -4,13 +4,14 @@ import './MusicTable.css'
 
 const MusicTable = (props) => {
 
-    
+
 
     return (  
             props.parentSongs.map((song) => {
                 return(
                     <div>
-                        <Song   title={song.title}
+                        <Song   id={song.id}
+                                title={song.title}
                                 artist={song.artist}
                                 album={song.album}
                                 release_date={song.release_date}

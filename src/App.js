@@ -6,6 +6,7 @@ import SearchBar from './Components/SearchBar/SearchBar';
 import UpdateMusic from './Components/UpdateMusic/UpdateMusic';
 import CreateSong from './Components/CreateSong/CreateSong';
 
+const baseURL = "http://127.0.0.1:8000/api/music_library/";
 
 function App() {
 
@@ -16,25 +17,25 @@ function App() {
   }, [])
 
   async function getAllSongs(){
-    await axios.get('http://127.0.0.1:8000/api/music_library/').then(response => setSongs(response.data));
+    await axios.get(`${baseURL}`).then(response => setSongs(response.data));
   }
 
   async function createSong(newSong){
-    //    newSong:
-    //   {
-    //     "title": "amine",
-    //     "artist": "irmergern dergs",
-    //     "album": "pink floyd",
-    //     "release_date": "2022-09-01",
-    //     "genre": "jazz",
-    //     "liked": "False",
-    //     "img_url": null
-    // }
-    let response = await axios.post('http://127.0.0.1:8000/api/music_library/', newSong);
+    let response = await axios.post(`${baseURL}`, newSong);
     if(response.status === 201){
       await getAllSongs();
     }
   }
+
+  async function putSong(newSong){
+    let response = await axios.put(`${baseURL}${newSong.id}/`,{
+      
+    });
+    if(response.status === 201){
+      await getAllSongs();
+    }
+  }
+
 
   return (
     <div className="all-items bg-success d-flex flex-column align-items-center">
