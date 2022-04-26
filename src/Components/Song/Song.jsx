@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
 import './Song.css'
 
-const Song = ({title, artist, album, release_date, genre, like, image_url, num_likes}) => {
-    return ( 
-        <div>
-            <div>
-                <div>
-                <i >{image_url}</i>
-                </div>
-                <div>
-                    <h6>{like}</h6>
-                </div>
-                <div>
-                    <h6>{num_likes}</h6>
-                </div>
+const Song = ({title, artist, album, release_date, genre, liked, image_url, num_likes}) => {
 
+
+
+    return ( 
+        <div className="song-box border d-flex">
+            <div className="like-image d-flex flex-column col-md-3 p-1 align-items-start">
+                <div className="image p-1">
+                    <img className="image" src={image_url} alt="image unavailable"/>
+                </div>
+                <div className="likes p-1">
+                    <h6>{num_likes}</h6>
+                    <button>{liked}</button>
+                </div>
             </div>
-            <div>
-                <div>
-                    <h6>{title}</h6>
+            <div className="info d-flex align-items-start flex-column">
+                <div className="mb-2">
+                    <h5>{title}</h5>
                 </div>
                 <div>
-                    <h6>{artist}</h6>
+                    <h7>{artist}</h7>
                 </div>
                 <div>
-                    <h6>{album}</h6>
+                    <h7>{album}</h7>
                 </div>
                 <div>
-                    <h6>{release_date}</h6>
+                    <h7>{release_date}</h7>
                 </div>
                 <div>
-                    <h6>{genre}</h6>
+                    <h7>{genre}</h7>
                 </div>
             </div>
         </div>

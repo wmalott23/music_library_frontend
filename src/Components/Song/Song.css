@@ -1,0 +1,23 @@
+.song-box{
+    width: 30em;
+}
+
+
+.like-image{
+    height: 15em;
+    width: 15em;
+}
+
+.image{
+    width: 10em;
+    height: 10em;
+}
+
+.info{
+    height: 15em;
+    width: 20em;
+    padding: 1em;
+    margin: 1em;
+    margin-left: 5em;
+    overflow: hidden;
+}

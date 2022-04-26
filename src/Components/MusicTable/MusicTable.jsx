@@ -12,7 +12,7 @@ const MusicTable = (props) => {
                             album={song.album}
                             release_date={song.release_date}
                             genre={song.genre}
-                            like={song.like}
+                            like={song.liked}
                             image_url={song.img_url}
                             num_likes={song.num_likes}/>
                 </div>

@@ -15,12 +15,11 @@ function App() {
   }, [])
 
   async function getAllSongs(){
-    await axios.get('http://127.0.0.1:8000/api/music_library/')
-    .then(response => setSongs(response.data));
+    await axios.get('http://127.0.0.1:8000/api/music_library/').then(response => setSongs(response.data));
   }
 
   return (
-    <div>
+    <div className="all-items d-flex flex-column align-items-center">
       <div>
         <NavigationBar />
       </div>
