@@ -47,14 +47,12 @@ function App() {
       <div className="d-flex flex-column col-md-12 align-items-center bg-white">
         <NavigationBar />
       </div>
-      <div className="col-md-12">
-        <MusicTable parentSongs={songs}/>
-      </div>
-      <div>
+      <div className="p-1">
+        <PutSong putNewSong={putSong}/>
         <CreateSong createNewSong={createSong}/>
       </div>
-      <div>
-        <PutSong putNewSong={putSong}/>
+      <div className="col-md-12 p-1">
+        <MusicTable parentSongs={songs}/>
       </div>
       <div>
         <DeleteSong deleteNewSong={deleteSong}/>
