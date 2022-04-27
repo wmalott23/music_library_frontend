@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { AiOutlineHeart } from 'react-icons/ai'
 import './Song.css'
 
 const Song = ({id, title, artist, album, release_date, genre, liked, image_url, num_likes}) => {
 
-
+    var divStyle = {
+        backgroundImage: `url(${image_url})`,
+        height: `150px`,
+        backgroundAttachment: `fixed`,
+        backgroundPosition: `center`,
+        backgroundRepeat: `no-repeat`,
+        backgroundSize: `cover`,
+    }
 
     return ( 
-        <tr>
-            <th className="">
-                <div className="">
-                    <img className="image" src={image_url} alt="Cannot find album Art"/>
-                </div>
-                <div className="d-flex flex-row">
-                    <h6>{num_likes}</h6>
-                    <button>{liked}</button>
-                </div>
+        <tr className="all-rows" style={divStyle}>
+            <th className="d-flex flex-row">
+                <h6 className="entry">{num_likes}<AiOutlineHeart/></h6>
             </th>
-            <th>{id}</th>
-            <th>{title}</th>
-            <th>{artist}</th>
-            <th>{album}</th>
-            <th>{release_date}</th>
-            <th>{genre}</th>
+            <th className="entry h-25">{id}</th>
+            <th className="entry">{title}</th>
+            <th className="entry">{artist}</th>
+            <th className="entry">{album}</th>
+            <th className="entry">{release_date}</th>
+            <th className="entry">{genre}</th>
         </tr>
      );
 }
