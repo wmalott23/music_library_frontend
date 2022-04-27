@@ -4,23 +4,20 @@ import './MusicTable.css'
 
 const MusicTable = (props) => {
 
-    const [search, setSearch] = useState(0)
+    const [search, setSearch] = useState('')
 
-    let songList = props.parentSongs
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        songList = props.parentSongs.filter(function(el) {
-            if(el.album === search || el.artist === search || el.genre === search || el.releaseDate === search || el.title === search ) return true;
-        });
-    }
+    let songList = props.parentSongs.filter(function(el) {
+        if(el.album.includes(search) || el.artist.includes(search) || el.genre.includes(search) ||  el.release_date.includes(search) || el.title.includes(search) ){
+        return true;
+        };
+    });
 
     return (  
-            (<form onChange={handleSubmit}>
+            <div>
+            <form>
                 <input type="text" placeholder="Search" onChange={(event) => setSearch(event.target.value)}/>
-                <button type="submit">Submit</button>
-            </form>), 
-            songList.map((song) => {
+            </form>)
+            {songList.map((song) => {
                 return(
                     <div>
                         <Song   id={song.id}
@@ -34,7 +31,8 @@ const MusicTable = (props) => {
                                 num_likes={song.num_likes}/>
                     </div>
                     )
-            })
+                })}
+            </div>
 
     );
 }
