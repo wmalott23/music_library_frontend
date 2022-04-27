@@ -51,7 +51,7 @@ function App() {
         <PutSong putNewSong={putSong}/>
         <CreateSong createNewSong={createSong}/>
       </div>
-      <div className="col-md-12 p-1">
+      <div className="col-md-12 p-1 d-flex flex-column align-items-center">
         <MusicTable parentSongs={songs}/>
       </div>
       <div>

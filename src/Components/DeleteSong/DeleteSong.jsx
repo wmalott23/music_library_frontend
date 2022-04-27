@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './DeleteSong.css'
 
 
 const DeleteSong = (props) => {
@@ -18,7 +18,7 @@ const DeleteSong = (props) => {
     }
 
     return ( 
-        <form className="bg-primary" onSubmit={handleSubmit}>Delete
+        <form className="box p-2 bg-white d-flex flex-column align-items-center" onSubmit={handleSubmit}>Fill out this form to determine which song is bad!
             <div>
                 <label>ID: </label>
                 <textarea type='text' onChange={(event) => setId(event.target.value)}/>
