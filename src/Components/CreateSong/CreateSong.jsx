@@ -11,7 +11,6 @@ const CreateSong = (props) => {
     const [album, setAlbum] = useState('');
     const [releaseDate, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
-    const [imageUrl, setImageUrl] = useState('');
 
 
 
@@ -63,9 +62,6 @@ const CreateSong = (props) => {
                     </div>
                     <div className="d-flex flex-column align-content-end p-1">
                         <textarea className="form-control form-control" type='text' placeholder="Genre:" onChange={(event) => setGenre(event.target.value)}></textarea>
-                    </div>
-                    <div className="d-flex flex-column align-content-end p-1">
-                        <textarea className="form-control form-control" type='text' placeholder="Album Image URL:" onChange={(event) => setImageUrl(event.target.value)}></textarea>
                     </div>
                     <button className="btn bg-success col-md-5 align-self-center text-white" onClick={handleClose}>Create</button>
                 </form>

@@ -24,9 +24,6 @@ const PutSong = (props) => {
             album: album,
             release_date: releaseDate,
             genre: genre,
-            liked: "False",
-            img_url: imageUrl,
-            num_likes: 0,
         };
 
         props.putNewSong(newSong);
@@ -68,9 +65,6 @@ const PutSong = (props) => {
                     </div>
                     <div className="d-flex flex-column align-content-end p-1">
                         <textarea className="form-control form-control" type='text' placeholder="Genre:" onChange={(event) => setGenre(event.target.value)}></textarea>
-                    </div>
-                    <div className="d-flex flex-column align-content-end p-1">
-                        <textarea className="form-control form-control" type='text' placeholder="Album Image URL:" onChange={(event) => setImageUrl(event.target.value)}></textarea>
                     </div>
                     <button className="btn bg-success col-md-5 align-self-center text-white" onClick={handleClose}>Update</button>
                 </form>
