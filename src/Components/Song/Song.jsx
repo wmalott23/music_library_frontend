@@ -15,15 +15,15 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
 
     return ( 
         <tr className="all-rows" style={divStyle}>
-            <th className="d-flex flex-row">
-                <h6 className="entry">{num_likes}<AiOutlineHeart/></h6>
+            <th className="">
+                <h6 className="entry h2">{num_likes}<AiOutlineHeart/></h6>
             </th>
-            <th className="entry h-25">{id}</th>
-            <th className="entry">{title}</th>
-            <th className="entry">{artist}</th>
-            <th className="entry">{album}</th>
-            <th className="entry">{release_date}</th>
-            <th className="entry">{genre}</th>
+            <th className="entry h4 h-25">{id}</th>
+            <th className="entry h4">{title}</th>
+            <th className="entry h4">{artist}</th>
+            <th className="entry h4">{album}</th>
+            <th className="entry h4">{release_date}</th>
+            <th className="entry h4">{genre}</th>
         </tr>
      );
 }

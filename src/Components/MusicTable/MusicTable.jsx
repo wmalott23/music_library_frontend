@@ -18,9 +18,9 @@ const MusicTable = (props) => {
                     <tr>
                     <input className="search" type="text" placeholder="Search" onChange={(event) => setSearch(event.target.value)}/>
                         <th>ID</th>
-                        <th>title</th>
-                        <th>artist</th>
-                        <th>album</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
                         <th>Release Date</th>
                         <th>Genre</th>
                     </tr>
