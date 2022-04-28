@@ -38,6 +38,7 @@ const DeleteSong = (props) => {
                     <div className="d-flex flex-column align-content-end p-1">
                         <textarea className="form-control form-control" type='text' placeholder="ID:" onChange={(event) => setId(event.target.value)}></textarea>
                     </div>
+                    <button className="btn bg-success col-md-5 align-self-center" onClick={handleClose}>Delete</button>
                 </form>
             </Modal.Body>
         </Modal>

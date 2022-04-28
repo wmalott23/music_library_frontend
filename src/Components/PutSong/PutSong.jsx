@@ -72,7 +72,7 @@ const PutSong = (props) => {
                     <div className="d-flex flex-column align-content-end p-1">
                         <textarea className="form-control form-control" type='text' placeholder="Album Image URL:" onChange={(event) => setImageUrl(event.target.value)}></textarea>
                     </div>
-                    <button className="btn bg-success col-md-5 align-self-center" onClick={handleClose}>Create</button>
+                    <button className="btn bg-success col-md-5 align-self-center" onClick={handleClose}>Update</button>
                 </form>
             </Modal.Body>
         </Modal>
