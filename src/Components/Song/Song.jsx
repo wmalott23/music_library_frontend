@@ -17,26 +17,26 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
 
     //like button
 
-    const [like, setLike] = useState(`false`)
+    const [like, setLike] = useState(`${liked}`)
     const likedURL = `http://127.0.0.1:8000/api/music_library/liked/`;
     const dislikedURL = `http://127.0.0.1:8000/api/music_library/disliked/`;
 
     let likedSong = {
         liked: "True",
     }
-    let dislikedSong = {
+    let unlikedSong = {
         liked: "False",
     }
 
     async function handleClick (event){
-        event.preventDefault();
         if(like === `false`) {
             await axios.patch(`${likedURL}${id}/`, likedSong);
-            setLike(`true`);
+            console.log(liked)
         }
         if(like === `true`) {
-            await axios.patch(`${dislikedURL}${id}/`, dislikedSong);
+            await axios.patch(`${dislikedURL}${id}/`, unlikedSong);
             setLike(`false`);
+            console.log(liked)
         }
     }
 
