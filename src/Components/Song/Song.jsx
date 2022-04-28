@@ -17,8 +17,7 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
 
     //like button
 
-    const [like, setLike] = useState(0)
-
+    const [like, setLike] = useState(`false`)
     const likedURL = `http://127.0.0.1:8000/api/music_library/liked/`;
     const dislikedURL = `http://127.0.0.1:8000/api/music_library/disliked/`;
 
@@ -29,14 +28,15 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
         liked: "False",
     }
 
-    async function handleClick (){ 
-        if(like === 0) {
+    async function handleClick (event){
+        event.preventDefault();
+        if(like === `false`) {
             await axios.patch(`${likedURL}${id}/`, likedSong);
-            setLike(1)
+            setLike(`true`);
         }
-        if(like === 1) {
+        if(like === `true`) {
             await axios.patch(`${dislikedURL}${id}/`, dislikedSong);
-            setLike(0)
+            setLike(`false`);
         }
     }
 
@@ -45,7 +45,9 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
         <tr className="all-rows" style={divStyle}>
             <th className="entry h4">
                 {num_likes}
-                <BsFillBookmarkHeartFill href="" className="btn" size={50} onClick={handleClick}/>
+                <a href="" className={like} size={50} onClick={handleClick}>
+                <BsFillBookmarkHeartFill/>
+                </a>
             </th>
             <th className="entry h4 h-25">{id}</th>
             <th className="entry h4">{title}</th>
