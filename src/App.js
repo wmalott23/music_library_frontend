@@ -39,7 +39,6 @@ function App() {
       <div className="d-flex flex-column col-md-12 align-items-center bg-dark">
         <NavigationBar />
         <div className="p-1">
-          <PutSong className="button" putNewSong={putSong}/>
           <CreateSong className="button" createNewSong={createSong}/>
         </div>
       </div>

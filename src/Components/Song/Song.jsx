@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { BsFillBookmarkHeartFill } from 'react-icons/bs';
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
+import PutSong from '../PutSong/PutSong'
 import './Song.css'
 
 const Song = ({id, title, artist, album, release_date, genre, liked, image_url, num_likes}) => {
@@ -67,6 +67,15 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
         window.location.reload(false);
     }
 
+    // Change Song
+
+    async function putSong(Song){
+        let response = await axios.put(`${baseURL}${id}/`, Song);
+        if(response.status === 201){
+            window.location.reload(false);
+        }
+      }
+
     // HTML/CSS
 
     return ( 
@@ -84,6 +93,7 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
             <th className="entry h4">{release_date}</th>
             <th className="entry h4">{genre}</th>
             <th>
+                <PutSong className="button" putSong={putSong}/>
                 <button className="btn bg-success align-self-center text-white m-1" onClick={handleDelete}>Delete</button> 
                 <>
                 <button className="btn bg-success align-self-center text-white m-1" onClick={handleShow}>Add Image</button> 
