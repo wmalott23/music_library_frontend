@@ -44,13 +44,13 @@ function App() {
 
   return (
     <div className="all-items bg-success d-flex flex-column align-items-center">
-      <div className="d-flex flex-column col-md-12 align-items-center bg-white">
+      <div className="d-flex flex-column col-md-12 align-items-center bg-dark">
         <NavigationBar />
-      </div>
-      <div className="p-1">
-        <PutSong putNewSong={putSong}/>
-        <CreateSong createNewSong={createSong}/>
-        <DeleteSong deleteNewSong={deleteSong}/>
+        <div className="p-1">
+          <PutSong className="button" putNewSong={putSong}/>
+          <CreateSong className="button" createNewSong={createSong}/>
+          <DeleteSong className="button" deleteNewSong={deleteSong}/>
+        </div>
       </div>
       <div className="col-md-12 p-1 d-flex flex-column align-items-center">
         <MusicTable parentSongs={songs}/>
