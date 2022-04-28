@@ -43,10 +43,10 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
 
     return ( 
         <tr className="all-rows" style={divStyle}>
-            <th className="entry h4">
+            <th className="like-container h4 p-2 d-flex justify-content-center">
+                <a href="" className={`${like} bg-success border border-success rounded`} size={50} onClick={handleClick}>
                 {num_likes}
-                <a href="" className={like} size={50} onClick={handleClick}>
-                <BsFillBookmarkHeartFill/>
+                <BsFillBookmarkHeartFill className="like-button"/>
                 </a>
             </th>
             <th className="entry h4 h-25">{id}</th>

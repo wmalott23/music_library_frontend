@@ -3,9 +3,16 @@
 }
 
 .true{
-    color: rgb(184, 6, 124);
+    color: white;
+    margin: .25em;
 }
 
 .false{
-    color: rgb(75, 75, 75);
+    color: black;
+    margin: .25em;
+}
+
+.like-container{
+    height: 150px;
+    align-items: center;
 }
