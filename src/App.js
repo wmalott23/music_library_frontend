@@ -50,12 +50,10 @@ function App() {
       <div className="p-1">
         <PutSong putNewSong={putSong}/>
         <CreateSong createNewSong={createSong}/>
+        <DeleteSong deleteNewSong={deleteSong}/>
       </div>
       <div className="col-md-12 p-1 d-flex flex-column align-items-center">
         <MusicTable parentSongs={songs}/>
-      </div>
-      <div>
-        <DeleteSong deleteNewSong={deleteSong}/>
       </div>
     </div>
   );

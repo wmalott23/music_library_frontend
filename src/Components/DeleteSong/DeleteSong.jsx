@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import './DeleteSong.css'
 
 
@@ -17,15 +19,29 @@ const DeleteSong = (props) => {
         props.deleteNewSong(newSong);
     }
 
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return ( 
-        <form className="box p-2 bg-white d-flex flex-column align-items-center" onSubmit={handleSubmit}>Fill out this form to determine which song is bad!
-            <div>
-                <label>ID: </label>
-                <textarea type='text' onChange={(event) => setId(event.target.value)}/>
-            </div>
-            <button>Delete</button>
-        </form>
-        
+        <>
+        <Button variant="dark" onClick={handleShow}>
+            Delete Song
+        </Button>
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>Delete Song</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <form className="modal-body p-1 d-flex flex-column align-content-end rounded" onSubmit={handleSubmit}>
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="ID:" onChange={(event) => setId(event.target.value)}></textarea>
+                    </div>
+                </form>
+            </Modal.Body>
+        </Modal>
+        </>
 
      );
 }

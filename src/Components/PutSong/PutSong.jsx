@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import './PutSong.css'
 
 const PutSong = (props) => {
 
@@ -49,35 +50,29 @@ const PutSong = (props) => {
                 <Modal.Title>Update Song</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form className="modal-body bg-success p-1" onSubmit={handleSubmit}>
-                    <div className="align-content-center" >
-                        <label>ID: </label>
-                        <textarea type='text' onChange={(event) => setId(event.target.value)}/>
-                    </div>            <div>
-                        <label>Title: </label>
-                        <textarea type='text' onChange={(event) => setTitle(event.target.value)}/>
+                <form className="modal-body p-1 d-flex flex-column align-content-end rounded" onSubmit={handleSubmit}>
+                    <div className="d-flex flex-column align-content-end p-1" >
+                        <textarea className="form-control form-control" type='text' placeholder="Song ID:" onChange={(event) => setId(event.target.value)}></textarea>
+                    </div>            
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="Title:" onChange={(event) => setTitle(event.target.value)}></textarea>
                     </div>
-                    <div>
-                        <label>Artist: </label>
-                        <textarea type='text' onChange={(event) => setArtist(event.target.value)}/>
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="Artist:" onChange={(event) => setArtist(event.target.value)}></textarea>
                     </div>
-                    <div>
-                        <label>Album: </label>
-                        <textarea type='text' onChange={(event) => setAlbum(event.target.value)}/>
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="Album:" onChange={(event) => setAlbum(event.target.value)}></textarea>
                     </div>
-                    <div>
-                        <label>Release Date: </label>
-                        <textarea type='text' onChange={(event) => setReleaseDate(event.target.value)}/>
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="Release Date (Try YYYY-MM-DD):" onChange={(event) => setReleaseDate(event.target.value)}></textarea>
                     </div>
-                    <div>
-                        <label>Genre: </label>
-                        <textarea type='text' onChange={(event) => setGenre(event.target.value)}/>
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="Genre:" onChange={(event) => setGenre(event.target.value)}></textarea>
                     </div>
-                    <div>
-                        <label>image URL: </label>
-                        <textarea type='text' onChange={(event) => setImageUrl(event.target.value)}/>
+                    <div className="d-flex flex-column align-content-end p-1">
+                        <textarea className="form-control form-control" type='text' placeholder="Album Image URL:" onChange={(event) => setImageUrl(event.target.value)}></textarea>
                     </div>
-                    <button variant="primary" onClick={handleClose}>Create</button>
+                    <button className="btn bg-success col-md-5 align-self-center" onClick={handleClose}>Create</button>
                 </form>
             </Modal.Body>
         </Modal>
