@@ -34,12 +34,18 @@ const Song = ({id, title, artist, album, release_date, genre, liked, image_url, 
 
     async function handleClick (){
         if(like === `false`) {
-            await axios.patch(`${likedURL}${id}/`, likedSong);
+            let response = await axios.patch(`${likedURL}${id}/`, likedSong);
+            if(response.status === 201){
+                window.location.reload(false);
+            }
+
         }
         if(like === `true`) {
-            await axios.patch(`${dislikedURL}${id}/`, unlikedSong);
+            let response = await axios.patch(`${dislikedURL}${id}/`, unlikedSong);
+            if(response.status === 201){
+                window.location.reload(false);    
         }
-        await window.location.reload(false);
+        }
     }
 
     // Delete Button

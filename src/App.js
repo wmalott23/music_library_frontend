@@ -29,13 +29,13 @@ function App() {
 
   return (
     <div className="all-items bg-success d-flex flex-column align-items-center">
-      <div className="d-flex flex-column col-md-12 align-items-center bg-dark">
+      <div className="d-flex flex-column col-md-12 align-items-center bg-dark sticky-top">
         <NavigationBar />
         <div className="p-1">
           <CreateSong className="button" createNewSong={createSong}/>
         </div>
       </div>
-      <div className="col-md-12 p-1 d-flex flex-column align-items-center">
+      <div className="music-table col-md-12 p-1 d-flex flex-column align-items-center">
         <MusicTable parentSongs={songs}/>
       </div>
     </div>
